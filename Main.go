@@ -1,11 +1,23 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
+
+// fib returns a function that returns
+// successive Fibonacci numbers.
+func fib() func() int {
+	a, b := 0, 1
+	return func() int {
+		a, b = b, a+b
+		return a
+	}
+}
 
 func main() {
-	myFavFloat, _ := strconv.ParseInt("42", 10, 64)
-	fmt.Println(myFavFloat)
+	f := fib()
+
+	// Function calls are evaluated left-to-right.
+	fmt.Println(f(), f(), f(), f(), f())
+
+	a, b := fmt.Println("hi, everybody")
+	fmt.Println(a, b)
 }
