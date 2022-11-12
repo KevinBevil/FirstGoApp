@@ -16,8 +16,11 @@ func main() {
 	f := fib()
 
 	// Function calls are evaluated left-to-right.
-	fmt.Println(f(), f(), f(), f(), f())
+	
+	fmt.Println(f())
+	fmt.Println(f())
+	fmt.Println(f())
+	fmt.Println(f())
+	fmt.Println(f())
 
-	a, b := fmt.Println("hi, everybody")
-	fmt.Println(a, b)
 }
